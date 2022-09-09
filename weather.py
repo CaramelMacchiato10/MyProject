@@ -49,7 +49,7 @@ def weather():
     print('-' * 40)
     print(f'{locate}의 날씨를 불러옵니다')
     print(f'현재온도는 {temp} 입니다.')
-    print(f'{before[:-5]} |{before[12:]}')
+    print(f'{before[:-5]}|{before[13:]}')
     print(f'강수확률: {rainper} | 습도: {waterper}')
     print(f'미세먼지: {dust1} | 초미세먼지: {dust2} | 자외선: {uv}')
     print('-' * 40)
