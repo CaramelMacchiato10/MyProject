@@ -34,7 +34,7 @@ def weather():
             today_chart_list = soup.find('ul',{'class':'today_chart_list'}).select('span',{'class':'txt'}) #미세먼지 초미세먼지 자외선 리스트
             summary_list = soup.find('dl',{'class':'summary_list'}).select('dd',{'class':'desc'}) #강수확률 습도
             before = soup.find('div',{'class':'temperature_info'}).select('p', {'class':'summary'})[0].text #어제 비교
-            rainper = summary_list[0].text #강수확률
+            realtemp = summary_list[0].text #강수확률
             waterper = summary_list[1].text #습도
             dust1 = today_chart_list[0].text #미세먼지
             dust2 = today_chart_list[1].text #초미세먼지
@@ -46,12 +46,12 @@ def weather():
             weather()
     
     
-    print('-' * 40)
+    print('-' * 60)
     print(f'{locate}의 날씨를 불러옵니다')
     print(f'현재온도는 {temp} 입니다.')
     print(f'{before[:-5]}|{before[13:]}')
-    print(f'강수확률: {rainper} | 습도: {waterper}')
+    print(f'체감온도: {realtemp} | 습도: {waterper}')
     print(f'미세먼지: {dust1} | 초미세먼지: {dust2} | 자외선: {uv}')
-    print('-' * 40)
+    print('-' * 60)
 
 weather()
